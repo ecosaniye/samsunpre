@@ -1,0 +1,473 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Barlow:wght@300;400;500&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --black:#0D0D0D;
+  --black2:#181818;
+  --black3:#222222;
+  --white:#FFFFFF;
+  --offwhite:#F5F5F5;
+  --gray:#8A8A8A;
+  --gray-light:#E0E0E0;
+  --red:#E81C24;
+  --red-dark:#B5141B;
+  --red-muted:#FF4A4A;
+}
+body{font-family:'Barlow',sans-serif;background:var(--black);color:var(--white);line-height:1.5;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+
+nav{background:var(--black);border-bottom:1px solid #2a2a2a;padding:0 3rem;display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo-wrap{display:flex;align-items:center;gap:12px}
+.logo-mark{width:40px;height:40px;background:var(--red);display:flex;align-items:center;justify-content:center}
+.logo-mark span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.1rem;color:var(--white);letter-spacing:-0.02em}
+.logo-text{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.3rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--white)}
+.logo-text em{color:var(--red);font-style:normal}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-size:0.8rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--gray);transition:color 0.2s}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{background:var(--red);color:var(--white)!important;padding:0.55rem 1.4rem;font-size:0.78rem!important;font-weight:700!important;letter-spacing:0.08em!important;transition:background 0.2s!important}
+.nav-cta:hover{background:var(--red-dark)!important}
+
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:90vh}
+.hero-left{background:var(--black);padding:5rem 3rem 5rem 3rem;display:flex;flex-direction:column;justify-content:center;border-right:1px solid #2a2a2a}
+.hero-eyebrow{font-size:0.72rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:1.5rem;display:flex;align-items:center;gap:10px}
+.hero-eyebrow::before{content:'';display:inline-block;width:24px;height:2px;background:var(--red)}
+.hero-h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:5.5rem;line-height:0.92;text-transform:uppercase;color:var(--white);margin-bottom:0.5rem;letter-spacing:-0.01em}
+.hero-h1 .red{color:var(--red)}
+.hero-h1 .outline{-webkit-text-stroke:1.5px var(--white);color:transparent}
+.hero-sub{font-size:1rem;font-weight:300;color:var(--gray);max-width:380px;line-height:1.8;margin:1.5rem 0 2.5rem}
+.hero-btns{display:flex;gap:0.75rem}
+.btn-red{background:var(--red);color:var(--white);padding:0.9rem 2rem;font-family:'Barlow',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;border:none;cursor:pointer;transition:background 0.2s}
+.btn-red:hover{background:var(--red-dark)}
+.btn-ghost{background:transparent;color:var(--white);padding:0.9rem 2rem;font-family:'Barlow',sans-serif;font-size:0.85rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;border:1px solid #444;cursor:pointer;transition:border-color 0.2s}
+.btn-ghost:hover{border-color:var(--white)}
+
+.hero-right{background:var(--black2);display:grid;grid-template-rows:1fr auto;overflow:hidden}
+.hero-visual-top{padding:3rem;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2rem}
+.big-tagline{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:3rem;text-transform:uppercase;line-height:1;text-align:center;letter-spacing:0.02em}
+.big-tagline .line2{-webkit-text-stroke:1px var(--white);color:transparent}
+.big-tagline .line3{color:var(--red)}
+.hero-stats-row{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #2a2a2a}
+.h-stat{padding:1.5rem;border-right:1px solid #2a2a2a;text-align:center}
+.h-stat:last-child{border-right:none}
+.h-stat-n{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2.4rem;color:var(--white);line-height:1}
+.h-stat-n span{color:var(--red)}
+.h-stat-l{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray);margin-top:4px}
+
+.ticker{background:var(--red);padding:0.65rem 3rem;display:flex;gap:3rem;overflow:hidden;white-space:nowrap}
+.ticker-inner{display:flex;gap:3rem;animation:tick 20s linear infinite}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ticker-item{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--white);display:flex;align-items:center;gap:0.75rem}
+.ticker-dot{width:5px;height:5px;background:rgba(255,255,255,0.5);border-radius:50%;flex-shrink:0}
+
+.section-wrap{background:var(--black);padding:5rem 3rem}
+.section-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem;padding-bottom:1.5rem;border-bottom:1px solid #2a2a2a}
+.sec-eyebrow{font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:0.5rem}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2.8rem;text-transform:uppercase;line-height:1;letter-spacing:0.01em}
+.sec-title em{-webkit-text-stroke:1px var(--white);color:transparent;font-style:normal}
+.sec-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:5rem;color:#2a2a2a;line-height:1}
+
+.cats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#2a2a2a}
+.cat-card{background:var(--black2);padding:2rem 1.75rem;cursor:pointer;transition:background 0.2s;position:relative;overflow:hidden}
+.cat-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--red);transition:height 0.3s}
+.cat-card:hover{background:var(--black3)}
+.cat-card:hover::before{height:100%}
+.cat-num{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:0.85rem;letter-spacing:0.15em;color:#333;margin-bottom:1.5rem}
+.cat-icon-wrap{width:44px;height:44px;border:1px solid #333;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;transition:border-color 0.2s}
+.cat-card:hover .cat-icon-wrap{border-color:var(--red)}
+.cat-icon-wrap i{font-size:20px;color:var(--gray);transition:color 0.2s}
+.cat-card:hover .cat-icon-wrap i{color:var(--red)}
+.cat-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.2rem;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.5rem}
+.cat-desc{font-size:0.82rem;font-weight:300;color:var(--gray);line-height:1.7}
+.cat-link{margin-top:1.25rem;font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:6px}
+
+.brands-bar{background:var(--black2);border-top:1px solid #2a2a2a;border-bottom:1px solid #2a2a2a;padding:1.5rem 3rem;display:flex;align-items:center;gap:2.5rem}
+.brands-label{font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gray);white-space:nowrap}
+.brands-divider{width:1px;height:24px;background:#333;flex-shrink:0}
+.brands-list{display:flex;gap:0;flex:1}
+.brand-item{padding:0 2rem;border-right:1px solid #2a2a2a;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;letter-spacing:0.08em;text-transform:uppercase;color:#555;transition:color 0.2s;cursor:pointer}
+.brand-item:hover{color:var(--white)}
+.brand-item:last-child{border-right:none}
+
+.why-section{display:grid;grid-template-columns:1fr 1fr;background:var(--black)}
+.why-left{padding:5rem 3rem;border-right:1px solid #2a2a2a}
+.why-right-grid{display:grid;grid-template-rows:1fr 1fr}
+.metric-card{padding:3rem;border-bottom:1px solid #2a2a2a;display:flex;flex-direction:column;justify-content:flex-end}
+.metric-card:last-child{border-bottom:none}
+.metric-big{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:4rem;line-height:1;color:var(--white)}
+.metric-big span{color:var(--red)}
+.metric-desc{font-size:0.82rem;font-weight:300;color:var(--gray);margin-top:0.5rem;line-height:1.6;max-width:200px}
+.why-list{display:flex;flex-direction:column;gap:0;margin-top:2.5rem}
+.why-row{padding:1.25rem 0;border-bottom:1px solid #222;display:flex;align-items:flex-start;gap:1.25rem}
+.why-row:first-child{border-top:1px solid #222}
+.why-idx{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:0.85rem;color:var(--red);min-width:24px;padding-top:2px}
+.why-row-title{font-size:0.9rem;font-weight:700;letter-spacing:0.03em;text-transform:uppercase;margin-bottom:0.25rem}
+.why-row-sub{font-size:0.8rem;font-weight:300;color:var(--gray);line-height:1.6}
+
+.svc-section{background:#111;padding:5rem 3rem}
+.svc-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#222;margin-top:3rem}
+.svc-box{background:#111;padding:2rem 1.5rem;transition:background 0.25s;cursor:pointer}
+.svc-box:hover{background:var(--red)}
+.svc-box:hover .svc-box-n,.svc-box:hover .svc-box-title,.svc-box:hover .svc-box-sub{color:var(--white)}
+.svc-box-n{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2rem;color:#333;margin-bottom:1.25rem;transition:color 0.25s}
+.svc-box-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.4rem;transition:color 0.25s}
+.svc-box-sub{font-size:0.8rem;font-weight:300;color:var(--gray);line-height:1.6;transition:color 0.25s}
+
+.blog-section{background:var(--black);padding:5rem 3rem}
+.blog-grid{display:grid;grid-template-columns:5fr 3fr 3fr;gap:1px;background:#222;margin-top:3rem}
+.blog-feature{background:var(--black2);padding:2.5rem;display:flex;flex-direction:column;justify-content:flex-end;min-height:320px;position:relative;overflow:hidden;cursor:pointer}
+.blog-feature-bg{position:absolute;inset:0;background:var(--red);opacity:0.12}
+.blog-feature-num{position:absolute;top:2rem;right:2rem;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:6rem;line-height:1;color:rgba(255,255,255,0.04)}
+.blog-feature-content{position:relative;z-index:1}
+.blog-tag{font-size:0.7rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--red);margin-bottom:0.75rem}
+.blog-feature-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.6rem;text-transform:uppercase;line-height:1.1;margin-bottom:1rem}
+.blog-feature-read{font-size:0.75rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:6px}
+.blog-small{background:var(--black2);padding:2rem;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer;transition:background 0.2s;border-bottom:none}
+.blog-small:hover{background:var(--black3)}
+.blog-small-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.15rem;text-transform:uppercase;line-height:1.2;margin-bottom:0.75rem}
+.blog-small-meta{font-size:0.75rem;color:var(--gray);font-weight:300}
+.blog-small-read{font-size:0.72rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--red);margin-top:1rem}
+
+.cta-block{background:var(--red);padding:5rem 3rem;display:grid;grid-template-columns:1fr auto;align-items:center;gap:3rem}
+.cta-title{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:3.5rem;text-transform:uppercase;line-height:1;color:var(--white)}
+.cta-title em{-webkit-text-stroke:1.5px var(--white);color:transparent;font-style:normal}
+.cta-sub{font-size:0.9rem;font-weight:300;color:rgba(255,255,255,0.7);margin-top:0.75rem;line-height:1.6}
+.cta-actions{display:flex;flex-direction:column;gap:0.75rem;align-items:flex-end}
+.btn-white{background:var(--white);color:var(--red);padding:1rem 2.5rem;font-family:'Barlow',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;border:none;cursor:pointer;white-space:nowrap;transition:opacity 0.2s}
+.btn-white:hover{opacity:0.9}
+.cta-phone{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.5rem;color:var(--white);letter-spacing:0.05em}
+
+footer{background:#080808;padding:4rem 3rem 2rem;border-top:1px solid #1a1a1a}
+.footer-top{display:grid;grid-template-columns:2.5fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid #1a1a1a}
+.footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:1rem}
+.footer-logo-mark{width:36px;height:36px;background:var(--red);display:flex;align-items:center;justify-content:center}
+.footer-logo-mark span{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1rem;color:var(--white)}
+.footer-logo-text{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;letter-spacing:0.06em;text-transform:uppercase}
+.footer-tagline{font-size:0.85rem;font-weight:300;color:var(--gray);line-height:1.8;max-width:260px;margin-bottom:1.5rem}
+.footer-contact-list{display:flex;flex-direction:column;gap:0.5rem}
+.footer-contact-list span{font-size:0.82rem;color:#555;font-weight:300}
+.footer-contact-list strong{color:#888;font-weight:400}
+.footer-col-title{font-size:0.68rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:#444;margin-bottom:1.25rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
+.footer-col ul li a{font-size:0.82rem;color:#555;font-weight:300;transition:color 0.2s}
+.footer-col ul li a:hover{color:var(--white)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:1.75rem;font-size:0.75rem;color:#333}
+.footer-bottom a{color:#444;transition:color 0.2s}
+.footer-bottom a:hover{color:var(--gray)}
+</style>
+
+<nav>
+  <div class="logo-wrap">
+    <div class="logo-mark"><span>SB</span></div>
+    <div class="logo-text">Samsun <em>Boya</em></div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#">Ürünler</a></li>
+    <li><a href="#">Hizmetler</a></li>
+    <li><a href="#">Markalar</a></li>
+    <li><a href="#">Blog</a></li>
+    <li><a href="#">Hakkımızda</a></li>
+    <li><a href="#" class="nav-cta">İletişim</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Samsun'un Boya Uzmanı</div>
+    <h1 class="hero-h1">
+      <span>Duvar</span><br>
+      <span class="outline">Değil,</span><br>
+      <span>Hayat</span><br>
+      <span class="red">Boyuyoruz.</span>
+    </h1>
+    <p class="hero-sub">İç cephe, dış cephe, dekoratif ve endüstriyel boya çözümleri. Marshall, Filli Boya, Polisan yetkili bayi. Samsun'un her semtine aynı gün teslimat.</p>
+    <div class="hero-btns">
+      <button class="btn-red">Ürünleri İncele</button>
+      <button class="btn-ghost">Boya Ustası Ara</button>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-visual-top">
+      <div class="big-tagline">
+        <div>DOĞRU RENK</div>
+        <div class="line2">DOĞRU</div>
+        <div class="line3">DOKUNUŞ.</div>
+      </div>
+      <div style="width:100%;max-width:320px">
+        <div style="height:1px;background:#2a2a2a;margin-bottom:1.5rem"></div>
+        <div style="font-size:0.78rem;font-weight:300;color:var(--gray);line-height:1.8;text-align:center">
+          Polisan & Permopolit Yetkili Bayi · Samsun'un Renk Merkezi<br>
+          Perakende &amp; Toptan Satış
+        </div>
+      </div>
+    </div>
+    <div class="hero-stats-row">
+      <div class="h-stat">
+        <div class="h-stat-n">15<span>+</span></div>
+        <div class="h-stat-l">Yıl Deneyim</div>
+      </div>
+      <div class="h-stat">
+        <div class="h-stat-n">2K<span>+</span></div>
+        <div class="h-stat-l">Proje</div>
+      </div>
+      <div class="h-stat">
+        <div class="h-stat-n">%<span>98</span></div>
+        <div class="h-stat-l">Memnuniyet</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-inner">
+    <span class="ticker-item"><span class="ticker-dot"></span>MARSHALL YETKİLİ BAYİ</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>FİLLİ BOYA YETKİLİ BAYİ</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>POLİSAN YETKİLİ BAYİ</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>AYNI GÜN TESLİMAT</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>ÜCRETSIZ RENK DANIŞMANLIĞI</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>SAMSUN'UN RENK MERKEZİ</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>MARSHALL YETKİLİ BAYİ</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>FİLLİ BOYA YETKİLİ BAYİ</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>POLİSAN YETKİLİ BAYİ</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>AYNI GÜN TESLİMAT</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>ÜCRETSIZ RENK DANIŞMANLIĞI</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>SAMSUN'UN RENK MERKEZİ</span>
+  </div>
+</div>
+
+<div class="brands-bar">
+  <span class="brands-label">Yetkili Bayi</span>
+  <div class="brands-divider"></div>
+  <div class="brands-list">
+    <span class="brand-item">Marshall</span>
+    <span class="brand-item">Filli Boya</span>
+    <span class="brand-item">Polisan</span>
+    <span class="brand-item">Permopolit</span>
+    <span class="brand-item">Betek</span>
+    <span class="brand-item">Dyo</span>
+  </div>
+</div>
+
+<section class="section-wrap">
+  <div class="section-header">
+    <div>
+      <div class="sec-eyebrow">Ürün Kategorileri</div>
+      <div class="sec-title">Her Projeye <em>Uygun</em><br>Boya Çözümleri</div>
+    </div>
+    <div class="sec-num">01</div>
+  </div>
+  <div class="cats-grid">
+    <div class="cat-card">
+      <div class="cat-num">01 — İÇ MEKAN</div>
+      <div class="cat-icon-wrap"><i class="ti ti-home" aria-hidden="true"></i></div>
+      <div class="cat-name">İç Cephe Boyaları</div>
+      <p class="cat-desc">Samsun'un nem koşullarına dayanıklı, nefes alan formüller. Salon, yatak odası, mutfak.</p>
+      <div class="cat-link">Ürünleri Gör <i class="ti ti-arrow-right" aria-hidden="true"></i></div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-num">02 — DIŞ MEKAN</div>
+      <div class="cat-icon-wrap"><i class="ti ti-building" aria-hidden="true"></i></div>
+      <div class="cat-name">Dış Cephe Boyaları</div>
+      <p class="cat-desc">Karadeniz iklimine özel UV korumalı, su geçirmez sistemler. Villa, apartman, ticari yapı.</p>
+      <div class="cat-link">Ürünleri Gör <i class="ti ti-arrow-right" aria-hidden="true"></i></div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-num">03 — DEKORATİF</div>
+      <div class="cat-icon-wrap"><i class="ti ti-sparkles" aria-hidden="true"></i></div>
+      <div class="cat-name">Dekoratif Boyalar</div>
+      <p class="cat-desc">Venedik sıvası, simli, kadife doku ve özel efektlerle mekânlara özgün karakter.</p>
+      <div class="cat-link">Ürünleri Gör <i class="ti ti-arrow-right" aria-hidden="true"></i></div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-num">04 — ENDÜSTRİYEL</div>
+      <div class="cat-icon-wrap"><i class="ti ti-settings" aria-hidden="true"></i></div>
+      <div class="cat-name">Endüstriyel Boyalar</div>
+      <p class="cat-desc">Fabrika, depo ve sanayi tesisleri için epoksi, antikorozif ve zemin boyaları.</p>
+      <div class="cat-link">Ürünleri Gör <i class="ti ti-arrow-right" aria-hidden="true"></i></div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-num">05 — AHŞAP & METAL</div>
+      <div class="cat-icon-wrap"><i class="ti ti-trees" aria-hidden="true"></i></div>
+      <div class="cat-name">Ahşap & Metal Koruyucu</div>
+      <p class="cat-desc">Dış mekan mobilyaları, çatı konstrüksiyonları ve metal yüzeyler için vernik ve astar.</p>
+      <div class="cat-link">Ürünleri Gör <i class="ti ti-arrow-right" aria-hidden="true"></i></div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-num">06 — DANIŞMANLIK</div>
+      <div class="cat-icon-wrap"><i class="ti ti-palette" aria-hidden="true"></i></div>
+      <div class="cat-name">Renk Danışmanlığı</div>
+      <p class="cat-desc">Ücretsiz danışmanlık, örnek uygulama ve dijital görselleştirme ile doğru rengi seçin.</p>
+      <div class="cat-link">Randevu Al <i class="ti ti-arrow-right" aria-hidden="true"></i></div>
+    </div>
+  </div>
+</section>
+
+<div class="why-section">
+  <div class="why-left">
+    <div class="sec-eyebrow">Neden Samsunboya.com?</div>
+    <div class="sec-title" style="margin-top:0.5rem;font-size:2.4rem">Samsun'da <em>20 Yıldır</em><br>Güven Veren Adres</div>
+    <div style="font-size:0.85rem;font-weight:300;color:var(--gray);line-height:1.8;margin-top:1rem;max-width:400px">
+      Atakum'dan Bafra'ya, Canik'ten Tekkeköy'e Samsun'un her semtine hızlı teslimat ve profesyonel hizmet.
+    </div>
+    <div class="why-list">
+      <div class="why-row">
+        <span class="why-idx">01</span>
+        <div><div class="why-row-title">Yetkili Bayi Güvencesi</div><div class="why-row-sub">Marshall, Filli Boya, Polisan resmi yetkili bayisiyiz.</div></div>
+      </div>
+      <div class="why-row">
+        <span class="why-idx">02</span>
+        <div><div class="why-row-title">Aynı Gün Teslimat</div><div class="why-row-sub">Samsun merkez ve ilçelerine sipariş gününde kargo.</div></div>
+      </div>
+      <div class="why-row">
+        <span class="why-idx">03</span>
+        <div><div class="why-row-title">Profesyonel Uygulama</div><div class="why-row-sub">Deneyimli usta kadromuzla boyama hizmetini de üstleniyoruz.</div></div>
+      </div>
+      <div class="why-row">
+        <span class="why-idx">04</span>
+        <div><div class="why-row-title">Teknik Destek</div><div class="why-row-sub">Ürün seçiminden uygulamaya uzman ekibimiz yanınızda.</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="why-right-grid">
+    <div class="metric-card" style="background:var(--black2)">
+      <div class="metric-big">2000<span>+</span></div>
+      <div class="metric-desc">Tamamlanan proje, Samsun genelinde</div>
+    </div>
+    <div class="metric-card" style="background:var(--red)">
+      <div class="metric-big" style="color:var(--white)">48<span style="color:rgba(255,255,255,0.6)">sa</span></div>
+      <div class="metric-desc" style="color:rgba(255,255,255,0.65)">İçinde ücretsiz teknik keşif hizmeti</div>
+    </div>
+  </div>
+</div>
+
+<section class="svc-section">
+  <div class="section-header">
+    <div>
+      <div class="sec-eyebrow">Hizmetlerimiz</div>
+      <div class="sec-title">Profesyonel <em>Hizmet</em><br>Samsun Geneli</div>
+    </div>
+    <div class="sec-num">02</div>
+  </div>
+  <div class="svc-row">
+    <div class="svc-box">
+      <div class="svc-box-n">01</div>
+      <div class="svc-box-title">Boya Badana</div>
+      <div class="svc-box-sub">Samsun'un tüm semtlerine konut ve işyeri boyama hizmeti.</div>
+    </div>
+    <div class="svc-box">
+      <div class="svc-box-n">02</div>
+      <div class="svc-box-title">Dış Cephe Tadilatı</div>
+      <div class="svc-box-sub">İskele kurulumu, yüzey hazırlığı ve komple kaplama sistemi.</div>
+    </div>
+    <div class="svc-box">
+      <div class="svc-box-n">03</div>
+      <div class="svc-box-title">Dekoratif Uygulama</div>
+      <div class="svc-box-sub">Özel efektler, dokular ve özgün duvar tasarımı.</div>
+    </div>
+    <div class="svc-box">
+      <div class="svc-box-n">04</div>
+      <div class="svc-box-title">Endüstriyel Kaplama</div>
+      <div class="svc-box-sub">Fabrika ve depo için epoksi, antikorozif sistemler.</div>
+    </div>
+  </div>
+</section>
+
+<section class="blog-section">
+  <div class="section-header">
+    <div>
+      <div class="sec-eyebrow">Boya Rehberi & Blog</div>
+      <div class="sec-title">Uzman <em>Tavsiyeleri</em><br>& Samsun Projeleri</div>
+    </div>
+    <div class="sec-num">03</div>
+  </div>
+  <div class="blog-grid">
+    <div class="blog-feature">
+      <div class="blog-feature-bg"></div>
+      <div class="blog-feature-num">01</div>
+      <div class="blog-feature-content">
+        <div class="blog-tag">Rehber</div>
+        <div class="blog-feature-title">Samsun İklimine Uygun Dış Cephe Boyası Nasıl Seçilir?</div>
+        <div class="blog-feature-read">Devamını Oku <i class="ti ti-arrow-right" aria-hidden="true"></i></div>
+      </div>
+    </div>
+    <div class="blog-small">
+      <div>
+        <div class="blog-tag">Trend</div>
+        <div class="blog-small-title">2026 Trend Renkleri: Evinize En Çok Yakışacak Tonlar</div>
+        <div class="blog-small-meta">Renk & Dekor · 5 dk</div>
+      </div>
+      <div class="blog-small-read">Devamını Oku <i class="ti ti-arrow-right" aria-hidden="true" style="font-size:12px"></i></div>
+    </div>
+    <div class="blog-small">
+      <div>
+        <div class="blog-tag">DIY</div>
+        <div class="blog-small-title">Evi Kendin Boya: Başlamadan Önce Bunları Bil</div>
+        <div class="blog-small-meta">Uygulama · 7 dk</div>
+      </div>
+      <div class="blog-small-read">Devamını Oku <i class="ti ti-arrow-right" aria-hidden="true" style="font-size:12px"></i></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-block">
+  <div>
+    <div class="cta-title">Projeniz İçin<br><em>Ücretsiz</em> Keşif</div>
+    <div class="cta-sub">Atakum · Canik · İlkadım · Tekkeköy · Bafra ve tüm Samsun'a hizmet veriyoruz.</div>
+  </div>
+  <div class="cta-actions">
+    <button class="btn-white">Hemen Randevu Al</button>
+    <div class="cta-phone">0362 000 00 00</div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">
+        <div class="footer-logo-mark"><span>SB</span></div>
+        <div class="footer-logo-text">Samsun Boya</div>
+      </div>
+      <p class="footer-tagline">Samsun'un güvenilir boya mağazası. Duvar Değil, Hayat Boyuyoruz.</p>
+      <div class="footer-contact-list">
+        <span><strong>📍</strong> İlkadım, Samsun</span>
+        <span><strong>📞</strong> 0362 000 00 00</span>
+        <span><strong>✉</strong> info@samsunboya.com</span>
+      </div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Ürünler</div>
+      <ul>
+        <li><a href="#">İç Cephe Boya</a></li>
+        <li><a href="#">Dış Cephe Boya</a></li>
+        <li><a href="#">Dekoratif Boya</a></li>
+        <li><a href="#">Endüstriyel Boya</a></li>
+        <li><a href="#">Ahşap & Metal</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Hizmetler</div>
+      <ul>
+        <li><a href="#">Boya Badana</a></li>
+        <li><a href="#">Dış Cephe</a></li>
+        <li><a href="#">Dekoratif Uygulama</a></li>
+        <li><a href="#">Renk Danışmanlığı</a></li>
+        <li><a href="#">Boya Ustası</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Bölgeler</div>
+      <ul>
+        <li><a href="#">Atakum Boya</a></li>
+        <li><a href="#">Canik Boya</a></li>
+        <li><a href="#">İlkadım Boya</a></li>
+        <li><a href="#">Tekkeköy Boya</a></li>
+        <li><a href="#">Bafra Boya</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 samsunboya.com — Tüm hakları saklıdır.</span>
+    <span><a href="#">Gizlilik Politikası</a> · <a href="#">KVKK</a> · <a href="#">Çerez Bildirimi</a></span>
+  </div>
+</footer>
